@@ -27,9 +27,9 @@ const (
 	CharacterFirstName firstName = "Bruce"
 	CharacterLastName  lastName  = "Wayne"
 	CharacterRole      role      = "protector"
-	CharacterSide      side      = "good"
+	CharacterSide      side      = "Good"
 	CharacterCity      city      = "Gotham City"
-	FavouritePhrase    phrase    = "Yes, I'm Batman!"
+	FavouritePhrase    phrase    = "Yes! I'm Batman!"
 )
 
 func printFullName(first firstName, last lastName) {
@@ -53,9 +53,8 @@ func printTitle(characterCity city, characterSide side, characterRole role) {
 }
 
 func printFavouritePhrase(characterPhrase phrase) {
-	var emoji rune = '🦇'
-	fmt.Println(emoji)
-	fmt.Println(characterPhrase)
+	var characterLogo rune = '🦇'
+	fmt.Println(characterPhrase, characterLogo)
 }
 
 func main() {

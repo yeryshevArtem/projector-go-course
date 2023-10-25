@@ -42,9 +42,9 @@ func printPhysique(h height, w weight) {
 	fmt.Println(concateneted)
 }
 
-func getFullBio(first firstName, last lastName, func1 printFullNameFn, w weight, h height, func2 printPhysiqueFn) {
-	func1(first, last)
-	func2(h, w)
+func getFullBio(first firstName, last lastName, fullNameGetter printFullNameFn, w weight, h height, physiqueGetter printPhysiqueFn) {
+	fullNameGetter(first, last)
+	physiqueGetter(h, w)
 }
 
 func printTitle(characterCity city, characterSide side, characterRole role) {

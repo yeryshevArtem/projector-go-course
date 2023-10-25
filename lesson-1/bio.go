@@ -38,18 +38,17 @@ func printFullName(first firstName, last lastName) {
 }
 
 func printPhysique(h height, w weight) {
-	var concateneted = fmt.Sprintf("He is %d meters talls and weights is %d kilograms.", h, w)
-	fmt.Println(concateneted)
+	fmt.Printf("He is %d meters talls and weights is %d kilograms.\n", h, w)
 }
 
-func getFullBio(first firstName, last lastName, fullNameGetter printFullNameFn, w weight, h height, physiqueGetter printPhysiqueFn) {
-	fullNameGetter(first, last)
-	physiqueGetter(h, w)
+func printFullBio(first firstName, last lastName, fullNameFn printFullNameFn, w weight, h height, physiqueFn printPhysiqueFn) {
+	fullNameFn(first, last)
+	physiqueFn(h, w)
 }
 
 func printTitle(characterCity city, characterSide side, characterRole role) {
-	fmt.Println(fmt.Sprintf("He is the superhero %s of %s.", characterRole, characterCity))
-	fmt.Println(fmt.Sprintf("Side: %s", characterSide))
+	fmt.Printf("He is the superhero %s of %s.\n", characterRole, characterCity)
+	fmt.Printf("Side: %s\n", characterSide)
 }
 
 func printFavouritePhrase(characterPhrase phrase) {
@@ -58,8 +57,8 @@ func printFavouritePhrase(characterPhrase phrase) {
 }
 
 func main() {
-	// This is jut for example function composition
-	getFullBio(CharacterFirstName, CharacterLastName, printFullName, CharacterWeight, CharacterHeight, printPhysique)
+	// This is just for example function composition
+	printFullBio(CharacterFirstName, CharacterLastName, printFullName, CharacterWeight, CharacterHeight, printPhysique)
 	printTitle(CharacterCity, CharacterSide, CharacterRole)
 	printFavouritePhrase(FavouritePhrase)
 }
